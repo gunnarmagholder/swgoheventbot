@@ -13,10 +13,11 @@ calendars = Icalendar::Calendar.parse(ics_file)
 calendars.each do |calendar|
   calendar.events.each do |event|
      # Filtere nach Eventnamen, die mit 'TW' beginnen
-    if event.summary.start_with?('TW')
-    puts "Event: #{event.summary}"
-    puts "Startzeit: #{event.dtstart}"
-    puts "Endzeit: #{event.dtend}"
-    puts "Beschreibung: #{event.description}"
+    if event.summary.include?('TW')
+      puts "Event: #{event.summary}"
+      puts "Startzeit: #{event.dtstart}"
+      puts "Endzeit: #{event.dtend}"
+      puts "Beschreibung: #{event.description}"
+    end
   end
 end
