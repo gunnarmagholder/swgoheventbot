@@ -12,7 +12,7 @@ calendars = Icalendar::Calendar.parse(ics_file)
 # Alle Events durchlaufen
 calendars.each do |calendar|
   calendar.events.each do |event|
-    if event.summary.include?('TW')
+    if event.summary.include?('TW') || event.summary.include?('TB')
       puts "Event: #{event.summary}"
       puts "Startzeit: #{event.dtstart}"
       puts "Endzeit: #{event.dtend}"
