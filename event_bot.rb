@@ -18,3 +18,10 @@ calendars.each do |calendar|
     puts "Beschreibung: #{event.description}"
   end
 end
+
+def write_to_discord
+  BOT_TOKEN = ENV['BOT_TOKEN']
+  CLIENT_ID = ENV['CLIENT_ID']
+
+  bot = Discordrb::Bot.new token: BOT_TOKEN, client_id: CLIENT_ID
+end
