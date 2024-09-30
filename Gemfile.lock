@@ -10,6 +10,7 @@ GEM
     discordrb-webhooks (3.5.0)
       rest-client (>= 2.0.0)
     domain_name (0.6.20240107)
+    dotenv (3.1.0)
     event_emitter (0.2.6)
     ffi (1.17.0)
     ffi (1.17.0-aarch64-linux-gnu)
@@ -61,6 +62,7 @@ PLATFORMS
 
 DEPENDENCIES
   discordrb
+  dotenv
   icalendar
 
 BUNDLED WITH

@@ -2,13 +2,14 @@
 
 require 'icalendar'
 require 'open-uri'
+require 'dotenv/load'
 
 # .ics Datei laden
 ics_file = URI.open('https://swgohevents.com/ical')
 
 # Kalender parsen
 calendars = Icalendar::Calendar.parse(ics_file)
-
+Dotenv.load
 # Alle Events durchlaufen
 calendars.each do |calendar|
   calendar.events.each do |event|
