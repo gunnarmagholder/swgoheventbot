@@ -28,6 +28,7 @@ scheduler.cron '0 0 * * *' do
       message += "Startzeit: #{event.dtstart}\n"
       message += "Endzeit: #{event.dtend}\n"
       message += "Beschreibung: #{event.description}\n"
+
     end
   end
   bot.send_message(CHANNEL_ID, message)
