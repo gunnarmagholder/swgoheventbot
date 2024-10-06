@@ -26,11 +26,12 @@ scheduler.cron '0 0 * * *' do
   # Alle Events durchlaufen
   calendars.each do |calendar|
     calendar.events.each do |event|
-      message += "Event: #{event.summary}\n"
-      message += "Startzeit: #{event.dtstart}\n"
-      message += "Endzeit: #{event.dtend}\n"
-      message += "Beschreibung: #{event.description}\n"
-
+      if event.summary.include?('TW') || event.summary.include?('TB')
+        message += "Event: #{event.summary}\n"
+        message += "Startzeit: #{event.dtstart}\n"
+        message += "Endzeit: #{event.dtend}\n"
+        message += "Beschreibung: #{event.description}\n"
+      end
     end
   end
   bot.send_message(CHANNEL_ID, message)
