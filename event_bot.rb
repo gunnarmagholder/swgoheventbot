@@ -20,6 +20,26 @@ CLIENT_ID = ENV['CLIENT_ID']
 CHANNEL_ID = ENV['CHANNEL_ID'].to_i
 bot = Discordrb::Bot.new token: BOT_TOKEN, client_id: CLIENT_ID
 bot.send_message(CHANNEL_ID, "Bot gestartet.")
+
+# SQLite3 Datenbank initialisieren
+db_file = "events.db" 
+
+# Wenn die Datenbank noch nicht existiert, erstelle sie und die Tabelle
+unless File.exist?(db_file)
+  db = SQLite3::Database.new db_file
+  db.execute <<-SQL
+    CREATE TABLE IF NOT EXISTS events (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      start_date TEXT,
+      end_date TEXT,
+      UNIQUE(name, start_date) -- Sorgt dafür, dass das Event nur einmal vorkommt
+    );
+  SQL
+else
+  db = SQLite3::Database.new db_file
+end
+
 scheduler = Rufus::Scheduler.new
 scheduler.cron '0 0 * * *' do
   message = "Hier sind die Events für heute:\n"
