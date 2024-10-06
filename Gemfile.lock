@@ -39,6 +39,7 @@ GEM
     mime-types (3.5.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2024.0903)
+    mini_portile2 (2.8.7)
     netrc (0.11.0)
     opus-ruby (1.0.1)
       ffi
@@ -51,6 +52,18 @@ GEM
       netrc (~> 0.8)
     rufus-scheduler (3.9.2)
       fugit (~> 1.1, >= 1.11.1)
+    sqlite3 (2.1.0)
+      mini_portile2 (~> 2.8.0)
+    sqlite3 (2.1.0-aarch64-linux-gnu)
+    sqlite3 (2.1.0-aarch64-linux-musl)
+    sqlite3 (2.1.0-arm-linux-gnu)
+    sqlite3 (2.1.0-arm-linux-musl)
+    sqlite3 (2.1.0-arm64-darwin)
+    sqlite3 (2.1.0-x86-linux-gnu)
+    sqlite3 (2.1.0-x86-linux-musl)
+    sqlite3 (2.1.0-x86_64-darwin)
+    sqlite3 (2.1.0-x86_64-linux-gnu)
+    sqlite3 (2.1.0-x86_64-linux-musl)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     websocket (1.2.11)
@@ -76,6 +89,7 @@ DEPENDENCIES
   dotenv
   icalendar
   rufus-scheduler
+  sqlite3
 
 BUNDLED WITH
    2.5.17

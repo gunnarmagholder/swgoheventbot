@@ -5,4 +5,4 @@ gem "discordrb"
 gem 'rufus-scheduler'
 
 gem "dotenv"
-
+gem "sqlite3"
