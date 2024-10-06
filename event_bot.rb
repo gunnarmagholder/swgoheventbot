@@ -5,6 +5,8 @@ require 'open-uri'
 require 'dotenv/load'
 require 'discordrb'
 require 'rufus-scheduler'
+require 'sqlite3'
+
 
 # .ics Datei laden
 ics_file = URI.open('https://swgohevents.com/ical')
